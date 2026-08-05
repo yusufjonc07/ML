@@ -13,7 +13,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-import config
+import portfolio.food_price.config as config
 
 
 def get_models() -> dict:

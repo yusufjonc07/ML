@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from utils.fuel_scrap import scrape_fuel_year
+from portfolio.food_price.utils.fuel_scrap import scrape_fuel_year
 
 # Columns that are not fuel prices, dropped before averaging. "AI-92 UZB" is
 # empty for several years, so it is excluded rather than carried as mostly-NaN.

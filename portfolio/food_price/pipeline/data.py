@@ -18,7 +18,7 @@ from pathlib import Path
 
 import pandas as pd
 
-import config
+import portfolio.food_price.config as config
 
 
 # ---------------------------------------------------------------------------
@@ -56,14 +56,14 @@ def _load_or_build(path: Path, builder, label: str) -> pd.DataFrame | None:
 
 def load_fuel() -> pd.DataFrame | None:
     def _build():
-        from utils.fuel import load_fuel_rates
+        from portfolio.food_price.utils.fuel import load_fuel_rates
         return load_fuel_rates()
     return _load_or_build(config.FUEL_CSV, _build, "fuel")
 
 
 def load_currency() -> pd.DataFrame | None:
     def _build():
-        from utils.currency import load_currency_rates
+        from portfolio.food_price.utils.currency import load_currency_rates
         return load_currency_rates(cbu_dir=config.CBU_DIR)[["date", "USD"]]
     frame = _load_or_build(config.CURRENCY_CSV, _build, "currency")
     return frame[["date", "USD"]] if frame is not None and "USD" in frame else frame
@@ -71,14 +71,14 @@ def load_currency() -> pd.DataFrame | None:
 
 def load_weather() -> pd.DataFrame | None:
     def _build():
-        from utils.weather import download_weather
+        from portfolio.food_price.utils.weather import download_weather
         return download_weather(out_path=None)
     return _load_or_build(config.WEATHER_CSV, _build, "weather")
 
 
 def load_population() -> pd.DataFrame | None:
     def _build():
-        from utils.population import build_population
+        from portfolio.food_price.utils.population import build_population
         return build_population(out_path=None)
     return _load_or_build(config.POPULATION_CSV, _build, "population")
 

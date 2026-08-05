@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-import config
+import portfolio.food_price.config as config
 
 
 def time_split(X: pd.DataFrame, y: pd.Series, dates: pd.Series, split_date: str | None = None):

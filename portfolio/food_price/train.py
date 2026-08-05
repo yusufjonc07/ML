@@ -20,13 +20,13 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 
-import config
-from pipeline.data import build_panel
-from pipeline.features import assemble
-from pipeline.split import time_split
-from pipeline.models import get_models
-from pipeline.evaluate import compare_models
-from pipeline.explain import feature_importance, permutation_feature_importance, shap_summary
+import portfolio.food_price.config as config
+from portfolio.food_price.pipeline.data import build_panel
+from portfolio.food_price.pipeline.features import assemble
+from portfolio.food_price.pipeline.split import time_split
+from portfolio.food_price.pipeline.models import get_models
+from portfolio.food_price.pipeline.evaluate import compare_models
+from portfolio.food_price.pipeline.explain import feature_importance, permutation_feature_importance, shap_summary
 
 
 def main() -> None:

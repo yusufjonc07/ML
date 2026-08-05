@@ -10,8 +10,8 @@ from __future__ import annotations
 
 import pandas as pd
 
-import config
-from utils.featuring import create_lags, create_rolling_features, create_calendar_features
+import portfolio.food_price.config as config
+from portfolio.food_price.utils.featuring import create_lags, create_rolling_features, create_calendar_features
 
 
 def build_features(df: pd.DataFrame) -> pd.DataFrame:
