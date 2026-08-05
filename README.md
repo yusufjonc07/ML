@@ -1,1 +1,1 @@
-## What I learned, experimented, developed
+## What I learned, experimented and developed about ML
